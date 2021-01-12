@@ -13,6 +13,7 @@ class HomePage extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.signIn = this.signIn.bind(this);
         this.signUp = this.signUp.bind(this);
+        this.signOut = this.signOut.bind(this);
     }
 
     
@@ -48,6 +49,11 @@ class HomePage extends React.Component {
         this.forceUpdate()
     }
 
+    signOut(){
+        fire.auth().signOut()
+        this.forceUpdate();
+    }
+
     render() {
 
        return (
@@ -64,7 +70,7 @@ class HomePage extends React.Component {
             <br/>
             <button onClick={ this.signIn }> signIn </button>
             <button onClick={this.signUp }>Sign Up</button>
-            <button onClick={fire.auth().signOut}>Sign out</button>
+            <button onClick={() => this.signOut}>Sign out</button>
             {fire.auth().currentUser === null? <div>please sign in or  up</div>: <div>{fire.auth().currentUser.displayName}</div>}
             </>
        )}

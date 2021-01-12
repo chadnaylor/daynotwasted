@@ -1,5 +1,6 @@
 import React from 'react';
 import fire from '../fire'
+import '../App.css'
 
 
 class Login extends React.Component {
@@ -23,8 +24,9 @@ class Login extends React.Component {
     }
 
     signIn(){
-        console.log(this.state)
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then( () => {
+        //console.log(this.state)
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then( () => {
             alert("Signed In")
         }).catch(() => {
             alert("wrong Creds.")
@@ -34,12 +36,7 @@ class Login extends React.Component {
 
     signUp(){
         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(() => {
-            fire.auth().currentUser.updateProfile(
-                {
-                    displayName: this.state.displayName
-                }
-            )})
+
         .then(() => {
             alert("you have been sign up")
         })
@@ -57,18 +54,16 @@ class Login extends React.Component {
     render (){
         return (
             <>
-            <label> email: </label>
-            <input name='email' onChange={ e => this.handleChange(e)} />
+            <label className = 'email'> email: </label>
+            <input className = 'inputEmail' name='email' onChange={ e => this.handleChange(e)} />
             <div />
-            <label>password: </label>
-            <input name='password' type='password' onChange={(e) => this.handleChange(e)} />
+            <label className = 'password'>password: </label>
+            <input className = 'inputPassword'name='password' type='password' onChange={(e) => this.handleChange(e)} />
             <br/>
-            <label>display name</label>
-            <input name='displayName' onChange={(e) => this.handleChange(e)} />
             <br/>
-            <button name="signIn" onClick={ this.signIn }>Sign In</button>
-            <button name='signUp' onClick={this.signUp }>Sign Up</button>
-            <button name='signOut' onClick={() => this.signOut}>Sign out</button>
+            <button className = 'signInButton' name="signIn" onClick={ this.signIn }>Sign In</button>
+            <button className = 'signUpButton' name='signUp' onClick={this.signUp }>Sign Up</button>
+            <button className = 'signOutButton' name='signOut' onClick={this.signOut}>Sign out</button>
             </>
     )
     }

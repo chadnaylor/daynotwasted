@@ -9,6 +9,17 @@ class App extends React.Component {
   }
 
 
+  // authListener(){
+  //   fire.auth().onAuthStateChanged((user) => {
+  //     console.log(user)
+  //     if(user) {
+  //       this.setState({ user });
+  //     } else {
+  //       this.setState({ user: null });
+  //     }
+  //   });
+  // }
+
   render() {
     return (
       <HomePage />

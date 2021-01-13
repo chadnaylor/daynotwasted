@@ -4,16 +4,16 @@ import fire from '../fire'
 
 
 describe('Home', () => {
-    it('shows Login component if not logged in', () => {
+    it('shows Signin component if not signged in', () => {
 
         const home = shallow(<Home user={null} />)
-        expect(home.find('Login')).toHaveLength(1)
+        expect(home.find('Signin')).toHaveLength(1)
     })
 
-    it('shows Goals component and hides Login when logged in', () => {
+    it('shows Goals component and hides Signin when signged in', () => {
 
         const home = shallow(<Home user={"not null"} />)
-        expect(home.find('Login')).toHaveLength(0)
+        expect(home.find('Signin')).toHaveLength(0)
         expect(home.find('Goals')).toHaveLength(1)
     })
 

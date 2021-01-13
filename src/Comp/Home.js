@@ -1,7 +1,7 @@
 import React from 'react'
 import fire from '../fire'
 import '../App.css'
-import Login from './Login';
+import Signin from './SignIn';
 import Goals from './Goals';
 
 class HomePage extends React.Component {
@@ -25,7 +25,7 @@ class HomePage extends React.Component {
         return (
             <>
                 <h1 className="Title"> Day Not Wasted </h1>
-                { this.props.user === null ? <Login /> : <Goals />}
+                { this.props.user === null ? <Signin /> : <Goals />}
             </>
         )
     }

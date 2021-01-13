@@ -11,7 +11,7 @@ const styledLabels = styled.label`
 `
 
 
-class Login extends React.Component {
+class Signin extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -32,7 +32,7 @@ class Login extends React.Component {
     }
 
     signIn() {
-        //console.log(this.state)
+        //console.sign(this.state)
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((user) => {
                 this.props.setUser("a user")
@@ -66,10 +66,10 @@ class Login extends React.Component {
     render() {
         return (
             <>
-                <label className='email'> email: </label>
+                <styledLabels className='email'> email: </styledLabels>
                 <input className='inputEmail' name='email' onChange={e => this.handleChange(e)} />
                 <div />
-                <label className='password'>password: </label>
+                <styledLabels className='password'>password: </styledLabels>
                 <input className='inputPassword' name='password' type='password' onChange={(e) => this.handleChange(e)} />
                 <br />
                 <br />
@@ -82,4 +82,4 @@ class Login extends React.Component {
 }
 
 
-export default Login;
+export default Signin;

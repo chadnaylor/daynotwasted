@@ -65,18 +65,18 @@ class Signin extends React.Component {
 
     render() {
         return (
-            <>
-                <styledLabels className='email'> email: </styledLabels>
-                <input className='inputEmail' name='email' onChange={e => this.handleChange(e)} />
+            <div className='Auth'>
+                <input className='inputEmail' name='email' placeholder='Email' onChange={e => this.handleChange(e)} />
                 <div />
-                <styledLabels className='password'>password: </styledLabels>
-                <input className='inputPassword' name='password' type='password' onChange={(e) => this.handleChange(e)} />
+                <input className='inputPassword' name='password' placeholder='Password' type='password' onChange={(e) => this.handleChange(e)} />
                 <br />
                 <br />
                 <button className='signInButton' name="signIn" onClick={this.signIn}>Sign In</button>
+                <br />
                 <button className='signUpButton' name='signUp' onClick={this.signUp}>Sign Up</button>
                 {/* <button className='signOutButton' name='signOut' onClick={this.signOut}>Sign out</button> */}
-            </>
+
+            </div>
         )
     }
 }

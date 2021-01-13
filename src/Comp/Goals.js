@@ -1,6 +1,6 @@
 import React from 'react';
 import SignOut from './SignOut';
-
+import './Goals.css'
 
 class Goals extends React.Component {
     constructor(props) {
@@ -13,8 +13,9 @@ class Goals extends React.Component {
     render() {
         return (
             <>
-                <SignOut />
                 <h1 className="Goals" > Goals </h1>
+                <SignOut />
+
                 <ul>
                     {
                         this.state.goalsList ?

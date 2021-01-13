@@ -24,7 +24,7 @@ class HomePage extends React.Component {
 
         return (
             <>
-                <h1 className="Title"> Day Not Wasted </h1>
+                <div className="Title"> Day Not Wasted </div>
                 { this.props.user === null ? <Signin /> : <Goals />}
             </>
         )

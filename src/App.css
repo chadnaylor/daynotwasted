@@ -1,8 +1,10 @@
+*{
+  background-color: #f0f0f0
+}
+
 .App {
   text-align: center;
 }
-
-
 
 .App-header {
   background-color: #282c34;
@@ -16,6 +18,8 @@
 }
 
 .Title {
+  position: relative;
+  margin-bottom: 25px;
   padding: 60px;
   text-align: center;
   background: #1abc9c;
@@ -36,19 +40,25 @@
   padding: 10px 15px;
   width: 75px;
   padding-right: 25px;
+  margin-bottom:2px;
+  border-bottom: 2px solid black;
 }
 .inputEmail {
-  background-color: #eee;
+  background-color: rgb(235, 232, 232);
   width: 20%;
   padding: 12px 13px;
   border : none;
-  
+  border-bottom: .5px solid black;
+  align-self: center;
 }
 .inputPassword{
-  background-color: #eee;
+  background-color: rgb(235, 232, 232);
   border: none;
   padding: 12px 13px;
   width: 20%;
+  border-bottom: .5px solid black;
+  align-self: center;
+  margin-bottom: 25px;
 }
 .password{
   font-size: 16.5px;
@@ -73,7 +83,9 @@
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  align-self: center;
+  margin-bottom: 15px;
 }
 
 button:active {
@@ -98,7 +110,8 @@ button.ghost {
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  align-self: center;
 }
 
 button:active {
@@ -137,6 +150,13 @@ button:focus {
 button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
+}
+
+.Auth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 

@@ -34,13 +34,7 @@ class Signin extends React.Component {
     signIn() {
         //console.sign(this.state)
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((user) => {
-                this.props.setUser("a user")
-                alert("user: " + JSON.stringify(user))
-
-            }).catch((e) => {
-                alert(e)
-            }).catch(() => {
+            .catch(() => {
                 alert("wrong Creds.")
             })
 

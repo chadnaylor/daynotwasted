@@ -1,0 +1,11 @@
+.Goals{
+    font-size: 4em;
+    align-self: center;
+    text-align: center;
+    font-family: 'Trocchi', serif;font-weight: normal; line-height: 48px; margin: 0;
+}
+
+.signOutButton{
+    position: fixed;
+    top: 0;
+}

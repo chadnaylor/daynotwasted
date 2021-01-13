@@ -1,28 +1,31 @@
-
+import fire from './fire'
+import "firebase/auth"
 import React from 'react'
 import HomePage from './Comp/Home'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      user: {}
+    }
   }
 
 
-  // authListener(){
-  //   fire.auth().onAuthStateChanged((user) => {
-  //     console.log(user)
-  //     if(user) {
-  //       this.setState({ user });
-  //     } else {
-  //       this.setState({ user: null });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    fire.auth().onAuthStateChanged((user) => {
+      console.log(user)
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
 
   render() {
     return (
-      <HomePage />
+      <HomePage user={this.state.user} />
     );
   }
 }

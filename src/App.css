@@ -27,15 +27,15 @@
 .email {
   
   font-size: 16.5px;
-  align-self: right;
+  align-items: center;
+  text-align: right;
   font-family: 'Montserrat', sans-serif;
   background-color: #eee;
   border: none;
   display: inline-block;
   padding: 10px 15px;
-  width: 150px;
-  
-  
+  width: 75px;
+  padding-right: 25px;
 }
 .inputEmail {
   background-color: #eee;
@@ -48,17 +48,19 @@
   background-color: #eee;
   border: none;
   padding: 12px 13px;
-  width: 16%;
+  width: 20%;
 }
 .password{
   font-size: 16.5px;
   align-items: center;
+  text-align: right;
   font-family: 'Montserrat', sans-serif;
   background-color: #eee;
   border: none;
-  padding: 12px 15px;
-  margin: 8px 0;
-  width: 100%;
+  display: inline-block;
+  padding: 10px 15px;
+  width: 75px;
+  padding-right: 25px;
 }
 
 .signInButton {

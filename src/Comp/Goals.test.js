@@ -11,9 +11,9 @@ describe('Goals Page', () => {
         const goals = shallow(<Goals goalsList={goalsList} />)
         expect(goals.find('.goalsList')).toHaveLength(2)
     })
-    it('renders logout component', () => {
+    it('renders signout component', () => {
         const goals = shallow(<Goals />)
-        expect(goals.find('LogOut')).toHaveLength(1)
+        expect(goals.find('SignOut')).toHaveLength(1)
     })
 })
 

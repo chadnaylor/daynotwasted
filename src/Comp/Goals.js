@@ -1,5 +1,5 @@
 import React from 'react';
-import LogOut from './LogOut';
+import SignOut from './SignOut';
 
 
 class Goals extends React.Component {
@@ -13,7 +13,7 @@ class Goals extends React.Component {
     render() {
         return (
             <>
-                <LogOut />
+                <SignOut />
                 <h1 className="Goals" > Goals </h1>
                 <ul>
                     {

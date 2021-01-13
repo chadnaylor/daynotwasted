@@ -1,7 +1,7 @@
 import React from 'react';
 import fire from '../fire'
 
-class LogOut extends React.Component {
+class SignOut extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -9,7 +9,7 @@ class LogOut extends React.Component {
     render() {
         return (
             <>
-                <button className='logoutButton' name='logOutbtn' onClick={this.signOut}>Log Out</button>
+                <button className='signOutButton' name='signOutbtn' onClick={this.signOut}>Sign Out</button>
             </>
         )
     }
@@ -19,4 +19,4 @@ class LogOut extends React.Component {
     }
 }
 
-export default LogOut;
+export default SignOut;

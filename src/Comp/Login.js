@@ -1,6 +1,14 @@
 import React from 'react';
 import fire from '../fire'
+import styled from 'styled-components'
 import '../App.css'
+
+const styledLabels = styled.label`
+    width: 150;
+    display: inline-block;
+    padding-right: 15px;
+    align-text: right;
+`
 
 
 class Login extends React.Component {
@@ -58,16 +66,16 @@ class Login extends React.Component {
     render() {
         return (
             <>
-                <label className='email'> email: </label>
+                <styledLabels className='email'> email: </styledLabels>
                 <input className='inputEmail' name='email' onChange={e => this.handleChange(e)} />
                 <div />
-                <label className='password'>password: </label>
+                <styledLabels className='password'>password: </styledLabels>
                 <input className='inputPassword' name='password' type='password' onChange={(e) => this.handleChange(e)} />
                 <br />
                 <br />
                 <button className='signInButton' name="signIn" onClick={this.signIn}>Sign In</button>
                 <button className='signUpButton' name='signUp' onClick={this.signUp}>Sign Up</button>
-                <button className='signOutButton' name='signOut' onClick={this.signOut}>Sign out</button>
+                {/* <button className='signOutButton' name='signOut' onClick={this.signOut}>Sign out</button> */}
             </>
         )
     }

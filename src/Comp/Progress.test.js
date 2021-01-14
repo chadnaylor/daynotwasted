@@ -18,7 +18,7 @@ describe('Progress bar', () => {
     it('accepts a progress prop and displays that number of minutes', () => {
         const currentProgress = 37;
         progress = shallow(<Progress progress={currentProgress} />)
-        expect(progress.text()).toContain(`Your progress: ${currentProgress} minutes`)
+        expect(progress.text()).toContain(`You dedicated: ${currentProgress} minutes`)
     })
     it('accepts a function updateProgress that updates ' +
         'progress when "Add minutes" button is clicked.', () => {

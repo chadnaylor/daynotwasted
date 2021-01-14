@@ -2,8 +2,9 @@
   background-color: #f0f0f0;
   background-size: 100%;
   height: 100vh;
-  background-image: linear-gradient( to bottom right,#ED872D,#512889);
+  /* background-image: linear-gradient( to bottom right,#ED872D,#512889); */
   /* background-image: linear-gradient(to bottom right, rgb(87, 241, 234), yellow) */
+  background: linear-gradient(to right, rgba(0,0,0,0), teal), linear-gradient(to right, rgba(255,0,100,.3), rgba(255,100,127,.2)), linear-gradient(to top right, yellow, rgba(0,0,0,0)), radial-gradient(closest-corner at 20% 80%, yellow, red);
 }
 
 .App {
@@ -23,17 +24,81 @@
 
 .Title {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: left;
   position: relative;
   margin-bottom: 25px;
-  padding-left: 50px;
-  color: rgb(116, 115, 115);
-  font-size: 35px;
+  padding-left: 20px;
+  color: rgb(243, 243, 243);
+  font-family: Papyrus, fantasy;
+  font-size: 40px;
   background-size: 100%;
   height: 50px;
-  background-color: #eee;
+  /* background-color: #eee; */
+  
+background-color: linear-gradient(to right, rgba(0,0,0,0), teal), linear-gradient(to right, rgba(255,0,100,.3), rgba(255,100,127,.2)), linear-gradient(to top right, yellow, rgba(0,0,0,0)), radial-gradient(closest-corner at 20% 80%, yellow, red);
+background-size: 75px 100px;
+}
+
+.signOutButton{
+  border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+
+
+.email {
+  
+  font-size: 16.5px;
+  align-items: center;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+}
+
+
+
+.email {
+  
+  font-size: 16.5px;
+  align-items: center;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+}
+
+
+
+.email {
+  
+  font-size: 16.5px;
+  align-items: center;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+}
+
+
+
+.email {
+  
+  font-size: 16.5px;
+  align-items: center;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
 }
 
 
@@ -54,21 +119,37 @@
   border-bottom: 2px solid black;
 }
 .inputEmail {
-  background-color: rgb(235, 232, 232);
-  width: 20%;
-  padding: 12px 13px;
-  border : none;
-  border-bottom: .5px solid black;
   align-self: center;
+  font-family: inherit;
+  width: 20%;
+  height: 15px;
+  border: 0;
+  border-bottom: 2px solid gray;
+  border-left: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 10px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-bottom: 10px;
 }
 .inputPassword{
-  background-color: rgb(235, 232, 232);
-  border: none;
-  padding: 12px 13px;
-  width: 20%;
-  border-bottom: .5px solid black;
-  align-self: center;
   margin-bottom: 25px;
+   
+  align-self: center;
+  font-family: inherit;
+  width: 20%;
+  height: 15px;
+  border: 0;
+  border-bottom: 2px solid gray;
+  border-left: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 10px 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }
 .password{
   font-size: 16.5px;

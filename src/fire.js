@@ -5,6 +5,7 @@ import "firebase/firebase-database"
 const fire = firebase.initializeApp({
     apiKey: "AIzaSyAuJDiTIi9irFcvQsN8naBftTQatYcZW8Y",
     authDomain: "day-not-wasted.firebaseapp.com",
+    databaseURL: "https://day-not-wasted-default-rtdb.firebaseio.com",
     projectId: "day-not-wasted",
     storageBucket: "day-not-wasted.appspot.com",
     messagingSenderId: "806790850080",

@@ -2,7 +2,6 @@ import fire from '../../../src/fire'
 
 //fire.firestore().useEmulator("localhost", 8080);
 context('Signin', () => {
-
     describe('Register/signin flow', () => {
         beforeEach(() => {
             cy.visit('http://localhost:3000')
@@ -41,7 +40,6 @@ context('Signin', () => {
         afterEach(() => {
             cy.clearCookies()
             cy.clearLocalStorage()
-
         })
     })
 })

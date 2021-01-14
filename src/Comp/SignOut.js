@@ -15,7 +15,6 @@ class SignOut extends React.Component {
     }
     signOut() {
         fire.auth().signOut()
-
     }
 }
 

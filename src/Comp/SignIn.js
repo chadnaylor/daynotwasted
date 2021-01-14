@@ -49,6 +49,7 @@ class Signin extends React.Component {
             .catch(() => {
                 alert("something went wrong")
             })
+
         this.forceUpdate()
     }
 

@@ -19,8 +19,9 @@ class Progress extends React.Component {
     render() {
         return (
             <>
-                <div>Your progress: {this.props.progress} minutes</div>
-                <input name='time' value='10' type='number' onChange={e => this.handleChange(e)} />
+
+                <div>You dedicated: {this.props.progress} minutes</div>
+                <input name='time' placeholder="Time spent" type='number' onChange={e => this.handleChange(e)} />
                 <button name='addMinutes' onClick={this.updateProgress} >Add minutes</button>
             </>
         )

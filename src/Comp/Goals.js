@@ -1,6 +1,7 @@
 import React from 'react';
 import SignOut from './SignOut';
 import './Goals.css'
+import Progress from './Progress'
 
 class Goals extends React.Component {
     constructor(props) {
@@ -13,17 +14,15 @@ class Goals extends React.Component {
     render() {
         return (
             <>
-                <h1 className="Goals" > Goals </h1>
+                <div className="Goals" > Goals </div>
                 <SignOut />
+                {
+                    this.state.goalsList ?
+                        this.state.goalsList
+                            .map(g => <div className='goalsList'> {g} <Progress /></div>) :
+                        <div>No goalslist</div>
+                }
 
-                <ul>
-                    {
-                        this.state.goalsList ?
-                            this.state.goalsList
-                                .map(g => <li className='goalsList'> {g} </li>) :
-                            <li>No goalslist</li>
-                    }
-                </ul>
             </>
         )
     }

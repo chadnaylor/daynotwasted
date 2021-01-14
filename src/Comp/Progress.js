@@ -4,23 +4,24 @@ class Progress extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            progress: 10
+            time: 10
         }
     }
 
     updateProgress = () => {
-        this.props.updateProgress(this.state.progress)
+        this.props.updateProgress(this.state.time)
     }
 
-
+    handleChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
+    }
 
     render() {
         return (
             <>
                 <div>Your progress: {this.props.progress} minutes</div>
-                <input name='time' value='10' type='number' />
+                <input name='time' value='10' type='number' onChange={e => this.handleChange(e)} />
                 <button name='addMinutes' onClick={this.updateProgress} >Add minutes</button>
-
             </>
         )
     }

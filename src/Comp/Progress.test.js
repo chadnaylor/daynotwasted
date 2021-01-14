@@ -20,12 +20,18 @@ describe('Progress bar', () => {
         progress = shallow(<Progress progress={currentProgress} />)
         expect(progress.text()).toContain(`Your progress: ${currentProgress} minutes`)
     })
-    it('Accepts a function updateProgress that updates ' +
+    it('accepts a function updateProgress that updates ' +
         'progress when "Add minutes" button is clicked.', () => {
             const updateProgress = jest.fn()
             progress = shallow(<Progress updateProgress={updateProgress} />)
             progress.find('button[name="addMinutes"]').simulate('click')
             expect(updateProgress).toHaveBeenCalledWith(10)
         })
-
+    it('sends number of minutes in input when "Add minutes" button is clicked', () => {
+        const updateProgress = jest.fn()
+        progress = shallow(<Progress updateProgress={updateProgress} />)
+        progress.find('input[name="time"]').simulate('change', { target: { name: 'time', value: 37 } })
+        progress.find('button[name="addMinutes"]').simulate('click')
+        expect(updateProgress).toHaveBeenCalledWith(37)
+    })
 })

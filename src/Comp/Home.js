@@ -7,26 +7,15 @@ import Goals from './Goals';
 class HomePage extends React.Component {
     constructor(props) {
         super(props)
-
-        // const setUser = user => this.setState({ user })
-
-        // fire.auth().onAuthStateChanged(function (user) {
-        //     if (user) {
-        //         setUser(user)
-        //     } else {
-        //         setUser(null)
-        //     }
-        // });
     }
-
 
     render() {
 
         return (
-            <>
+            <div className="background">
                 <div className="Title"> Day Not Wasted </div>
                 { this.props.user === null ? <Signin /> : <Goals />}
-            </>
+            </div>
         )
     }
 }

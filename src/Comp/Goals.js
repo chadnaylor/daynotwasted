@@ -2,6 +2,7 @@ import React from 'react';
 import SignOut from './SignOut';
 import './Goals.css'
 import Progress from './Progress'
+import fire from '../fire'
 
 class Goals extends React.Component {
     constructor(props) {
@@ -12,10 +13,22 @@ class Goals extends React.Component {
     }
 
     updateGoals = () => {
-        if (this.state.newGoal.length > 0) this.setState({
-            goalsList:
-                [...this.state.goalsList, { name: this.state.newGoal, progress: 0 }]
-        })
+        if (this.state.newGoal.length > 0)
+            fire.database().ref('users/' + fire.auth().currentUser.uid).set({
+
+                goals: [...this.state.goalsList, { name: this.state.newGoal, progress: 0 }]
+            })
+
+        // const ref = fire.database().ref('users/uid');
+        // postref.push(
+        //         Goals : {
+        //             progress
+        //         }
+        // )
+        // this.setState({
+        //     goalsList:
+        //         [...this.state.goalsList, { name: this.state.newGoal, progress: 0 }]
+        // })
     }
 
     handleChange(e) {
@@ -26,18 +39,20 @@ class Goals extends React.Component {
         return (time) => {
             let newList = this.state.goalsList
             newList[goalId].progress += parseInt(time)
-            this.setState({ goalsList: newList })
+            fire.database().ref('users/' + fire.auth().currentUser.uid).set({
+                goals: newList
+            })
         }
     }
 
-    // goalsListsssss(g, i){
-    //     return(
-    //         <>
-    //             <div className> {g.name} </div>
-    //             <div className="progress"> {g.progress} </div>
-    //         </>
-    //     )
-    // }
+    componentDidMount() {
+        fire.database().ref('users/' + fire.auth().currentUser.uid).on('value', (snapshot) => {
+            var data = snapshot.val()
+            if (data !== null) {
+                this.setState({ goalsList: data.goals })
+            }
+        })
+    }
 
     render() {
         return (

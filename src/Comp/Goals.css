@@ -8,7 +8,7 @@
     color: rgb(255, 255, 255);
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
-    
+    overflow-y: auto;
 }
 
 .addGoal{
@@ -28,6 +28,22 @@
     margin-bottom: 15px;
     
         
+}
+.addMinutes{
+    width: fit-content;
+    align-self: center;
+    border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    align-self: center;
+    margin-bottom: 15px; 
 }
 
 .newGoal{
@@ -63,6 +79,21 @@ button.ghost {
 
 
 }
+.timeSpent {
+    align-self: center;
+    font-family: inherit;
+    width: 25%;
+    height: 15px;
+    border: 0;
+    outline: 0;
+    font-size: 1.3rem;
+    color: rgb(255, 249, 249);
+    padding: 10px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgb(151, 149, 149);
+}
 .goalsList{
     width: 50%;
     align-self: center;
@@ -70,6 +101,7 @@ button.ghost {
     font-family: inherit; 
     font-size: 2rem;
     color: white;
+    
     
 }
 /* .signOutButton{
@@ -81,8 +113,9 @@ button.ghost {
 } */
 
 .listOfGoals{
-    margin-top: 50px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 600px;
+    overflow-y: auto;
 }

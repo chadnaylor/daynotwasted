@@ -1,11 +1,33 @@
 import { shallow } from 'enzyme'
 import Goals from './Goals'
+import fire from '../fire'
 
 describe('Goals Page', () => {
     let goals;
+    let set = jest.fn(), on = jest.fn()
     beforeEach(() => {
+        fire.database = jest.fn().mockImplementation(() => {
+            return {
+                ref: jest.fn().mockImplementation(() => {
+                    return {
+                        set: set,
+                        on: on
+                    }
+                })
+            }
+        })
+        fire.auth = jest.fn().mockImplementation(() => {
+            return {
+                currentUser: { uid: 4 }
+            }
+        })
         let goalsList = [{ name: 'one', progress: 0 }, { name: 'two', progress: 0 }];
         goals = shallow(<Goals goalsList={goalsList} />)
+    })
+    it('calls firebase for adding goals', () => {
+        goals.find('input[name="newGoal"]').simulate('change', { target: { name: 'newGoal', value: 'Learn to read' } })
+        goals.find('button[name="addGoalBtn"]').simulate('click')
+        expect(set).toHaveBeenCalled()
     })
     it('has a header of Goals', () => {
         expect(goals.find('.Goals')).toHaveLength(1)
@@ -25,8 +47,15 @@ describe('Goals Page', () => {
         expect(goals.find('button[name="addGoalBtn"]')).toHaveLength(1)
     })
     it('Adds a goal when input is entered and "Add Goal" button is clicked', () => {
-        goals.find('input[name="newGoal"]').simulate('change', { target: { name: 'newGoal', value: 'Learn to read' } })
-        goals.find('button[name="addGoalBtn"]').simulate('click')
+        let cb
+        on.mockImplementation((val, callback) => {
+            cb = callback
+        })
+
+        goals = shallow(<Goals />)
+        expect(typeof cb).toBe('function')
+        cb({ val: () => ({ goals: [{ name: 'Learn to read' }] }) })
+        goals.update()
         expect(goals.find('.listOfGoals').text()).toContain('Learn to read')
     })
     it('Will not let user submit an empty goal', () => {
@@ -40,9 +69,10 @@ describe('Goals Page', () => {
     })
     it('Calling updateProgress will update the specified goal progress', () => {
         let time = 13
+
         goals.find(`Progress`).first().prop('updateProgress')(time)
-        goals.update()
-        expect(goals.find(`Progress`).first().prop('progress')).toBe(time)
+
+        expect(set).toHaveBeenCalled()
     })
 })
 

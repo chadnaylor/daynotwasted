@@ -1,4 +1,6 @@
 import React from 'react'
+import '../App.css'
+import './Goals.css'
 
 class Progress extends React.Component {
     constructor(props) {
@@ -21,8 +23,9 @@ class Progress extends React.Component {
             <>
 
                 <div>You dedicated: {this.props.progress} minutes</div>
-                <input name='time' placeholder="Time spent" type='number' onChange={e => this.handleChange(e)} />
-                <button name='addMinutes' onClick={this.updateProgress} >Add minutes</button>
+                <input className='timeSpent' name='time' placeholder="Time spent" type='number' onChange={e => this.handleChange(e)} />
+                <button className='addMinutes' name='addMinutes' onClick={this.updateProgress} >Add minutes</button>
+
             </>
         )
     }

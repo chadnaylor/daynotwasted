@@ -20,5 +20,13 @@ context('Goals', () => {
             cy.get('button[name="addGoalBtn"]').click()
             cy.get('.goalsList').contains("Learn to read")
         })
+        it('When "Add minutes" button is clicked it will push info into db', () => {
+            cy.get('input[name="time"]').type('45')
+            cy.get('button[name="addMinutes"]').click()
+            cy.get('.goalsList').contains('45 minutes')
+
+            cy.get('button[name="addMinutes"]').click()
+            cy.get('.goalsList').contains('90 minutes')
+        })
     })
 })

@@ -1,16 +1,57 @@
 .Goals{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 4.3em;
     letter-spacing: -4px;
     font-weight: 700;
-    color: #080808;
+    color: rgb(255, 255, 255);
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
-    text-decoration: underline rgb(42, 42, 43);
+    
+}
+
+.addGoal{
+    width: fit-content;
+    align-self: center;
+    border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.newGoal{
+    width: 75px;
+    align-self: center;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+
+
 }
 
 .signOutButton{
     position: fixed;
     top: 0;
-    margin-top: 25px;
+    left: 90%;
+    margin-top: 5px;
     margin-left: 15px;
 }

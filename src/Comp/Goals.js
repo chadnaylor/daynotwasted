@@ -14,7 +14,10 @@ class Goals extends React.Component {
     render() {
         return (
             <>
-                <div className="Goals" > Goals </div>
+                <div className="Goals" > Goals
+                    <input name="newGoal" placeholder="Learn to code..." ></input>
+                    <button className="addGoal" name="addGoalBtn"> Add Goal </button>
+                </div>
                 <SignOut />
                 {
                     this.state.goalsList ?

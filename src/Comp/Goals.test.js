@@ -20,11 +20,9 @@ describe('Goals Page', () => {
         expect(goals.find('.goalsList')).toHaveLength(2)
         expect(goals.find('Progress')).toHaveLength(2)
     })
-    // it('Passes progress and updateProgress to each progress bar', () => {
-    //     const goalsList = ['one'];
-    //     const goalsPassed = shallow(<Goals goalsList={goalsList} />)
-    //     expect(goals.find('.goalsList')).toHaveLength(1)
-    //     expect(goals.find('Progress')).toHaveLength(1)
-    // })
+    it('renders an input box to enter a new goal and an "Add Goal" button is displayed', () => {
+        expect(goals.find('input[name="newGoal"]')).toHaveLength(1)
+        expect(goals.find('button[name="addGoalBtn"]')).toHaveLength(1)
+    })
 })
 

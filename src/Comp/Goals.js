@@ -18,17 +18,6 @@ class Goals extends React.Component {
 
                 goals: [...this.state.goalsList, { name: this.state.newGoal, progress: 0 }]
             })
-
-        // const ref = fire.database().ref('users/uid');
-        // postref.push(
-        //         Goals : {
-        //             progress
-        //         }
-        // )
-        // this.setState({
-        //     goalsList:
-        //         [...this.state.goalsList, { name: this.state.newGoal, progress: 0 }]
-        // })
     }
 
     handleChange(e) {
@@ -50,7 +39,17 @@ class Goals extends React.Component {
             var data = snapshot.val()
             if (data !== null) {
                 this.setState({ goalsList: data.goals })
+            } else {
+                 this.setState({ goalsList: [] })
             }
+        })
+    }
+
+    deleteGoal = (i) => {
+        let newGoals = [...this.state.goalsList]
+        newGoals.splice(i,1)
+        fire.database().ref('users/' + fire.auth().currentUser.uid).set({
+            goals: newGoals
         })
     }
 
@@ -68,10 +67,18 @@ class Goals extends React.Component {
                     {
                         this.state.goalsList ?
                             this.state.goalsList
-                                .map((g, i) => <div key={i} className='goalsList'> {g.name}
-                                    <Progress progress={g.progress} updateProgress={this.getUpdateProgress(i)} /></div>) :
-                            <div className='goalsList'>No goalslist</div>
+                                .map((g, i) =>  <div key={i} className='goalsList'> 
+                                                    {g.name}
+                                                    <Progress progress={g.progress} updateProgress={this.getUpdateProgress(i)} />
+                                                    <p>
+                                                    <button className="deleteBtn" name='deleteBtn' onClick={()=>this.deleteGoal(i)}>Delete Goal</button>
+                                           
+
+                                                    </p>
+                                                </div>) :
+                                                <div className='goalsList'>No goalslist</div>
                     }
+
                 </div>
             </>
         )

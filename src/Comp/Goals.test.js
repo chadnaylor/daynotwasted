@@ -69,10 +69,15 @@ describe('Goals Page', () => {
     })
     it('Calling updateProgress will update the specified goal progress', () => {
         let time = 13
-
         goals.find(`Progress`).first().prop('updateProgress')(time)
-
         expect(set).toHaveBeenCalled()
     })
+    it('Renders a "Delete Goal" button alongside each goal', () => {
+        expect(goals.find('button[name="deleteBtn"]')).toHaveLength(2)
+    })
+    it('When "Delete Goal" is clicked, the specified goal will be deleted', () => {
+        goals.find('button[name="deleteBtn"]').first().simulate('click')
+        expect(set).toHaveBeenCalledWith({goals: [{name: 'two', progress: 0 }]})
+        //expect(find('.goalsList')).toHaveLength(1)
+    })
 })
-

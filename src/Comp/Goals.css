@@ -29,6 +29,24 @@
     
         
 }
+.deleteBtn{
+    width: fit-content;
+    align-self: center;
+    border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    align-self: center;
+    margin-bottom: 15px;
+    
+        
+}
 .addMinutes{
     width: fit-content;
     align-self: center;
@@ -118,4 +136,18 @@ button.ghost {
     flex-direction: column;
     height: 600px;
     overflow-y: auto;
+}
+
+.bar{
+    width: 200px;
+    height: 25px;
+    align-self: center;
+    background-color: white;
+    position: relative;
+}
+.progress{
+    position: absolute;
+    height: 25px;
+    width: 50%;
+    background-color: aqua;
 }
